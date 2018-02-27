@@ -7,7 +7,7 @@ setup(
         author='Cristiano W. Araujo',
         author_email='cristianowerneraraujo@gmail.com',
         url='https://github.com/cristianowa/exdict',
-        download_url='',
+        download_url='https://github.com/cristianowa/exdict/archive/0.1.zip',
         keywords=['dictionary'],
         classifiers=[],
      )
