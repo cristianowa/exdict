@@ -63,5 +63,16 @@ duck: canard
         self.assertEqual(exd.foo.two, 2)
         self.assertEqual(exd.duck, "canard")
 
+    def test_inheritance(self):
+        class ClsUnTst(exdict.Exdict):
+            def foo(self):
+                print "foo"
+        objuntst = ClsUnTst()
+        objuntst["one"] = 1
+        objuntst["two"] = 2
+        self.assertIn("foo", dir(objuntst))
+        self.assertIn("one", dir(objuntst))
+        self.assertIn("two", dir(objuntst))
+
 if __name__ == '__main__':
     unittest.main()

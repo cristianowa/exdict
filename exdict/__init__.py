@@ -13,7 +13,9 @@ class Exdict(dict):
         self[key] = value
 
     def __dir__(self):
-        return dir(super(Exdict,self)) + self.keys()
+        import inspect
+        methods = inspect.getmembers(self.__class__, predicate=inspect.ismethod)
+        return self.keys() + [x[0] for x in methods]
 
     @classmethod
     def from_dict(cls, dct):
