@@ -7,7 +7,7 @@ class Exdict(dict):
         if key in ["__getattr__", "__setattr__"] + dir(dict):
             return None
             #TODO: use super(dict,self).__getattr__(key)
-        return self[key]
+        return self.get(key)
 
     def __setattr__(self, key, value):
         self[key] = value

@@ -3,6 +3,7 @@ import exdict
 import tempfile
 import os
 
+
 class ExdictTestCase(unittest.TestCase):
     def test_creation(self):
         exd = exdict.Exdict(foo=1)
@@ -73,6 +74,10 @@ duck: canard
         self.assertIn("foo", dir(objuntst))
         self.assertIn("one", dir(objuntst))
         self.assertIn("two", dir(objuntst))
+
+    def test_key_not_present(self):
+        uut = exdict.Exdict()
+        self.assertIsNone(uut.foo)
 
 if __name__ == '__main__':
     unittest.main()
